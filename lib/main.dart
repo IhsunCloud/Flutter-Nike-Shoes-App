@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:nike_shoes_app/kernel/painless.dart';
+
+// Local project.
+import 'package:nike_shoes_app/src/kernel/painless.dart';
 
 void main() => runApp(const Kernel());
 
@@ -11,7 +13,6 @@ class Kernel extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Nike Shoes',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
       home: const HomeScreen(),
