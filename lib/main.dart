@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 // Third-party packages.
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -24,6 +25,15 @@ class Kernel extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
       ),
+      localizationsDelegates: const [
+        GlobalCupertinoLocalizations.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+      ],
+      supportedLocales: const [
+        Locale("fa", "IR"),
+      ],
+      locale: const Locale("fa", "IR"),
       home: const HomeScreen(),
     );
   }
