@@ -1,7 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:nike_shoes_app/src/models/shoe.dart';
-import 'package:nike_shoes_app/src/ui/product_screen/notifiers/shoe_notifier.dart';
+import 'package:nike_shoes_app/src/ui/product_screen/providers/shoe_provider.dart';
 
 final shoeProvider = StateNotifierProvider<ShoeNotifier, List<Shoe>>((ref) {
   return ShoeNotifier()

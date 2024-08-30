@@ -6,17 +6,16 @@ class ProductItem extends StatelessWidget {
 
   const ProductItem({
     super.key,
-    required this.imageUrl,
     required this.title,
     required this.price,
+    required this.imageUrl,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 1800.0,
-      width: 500.0,
-      margin: const EdgeInsets.all(14.0),
+      width: 430.0,
+      margin: const EdgeInsets.only(bottom: 14.0, right: 14.0, left: 14.0),
       decoration: const BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.all(
@@ -28,7 +27,7 @@ class ProductItem extends StatelessWidget {
         children: [
           Image.asset(
             imageUrl,
-            height: 130,
+            height: 140,
             fit: BoxFit.fitHeight,
           ),
           Padding(
