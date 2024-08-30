@@ -6,6 +6,7 @@ import 'package:ionicons/ionicons.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import 'package:nike_shoes_app/src/kernel/constants/texts.dart';
+import 'package:nike_shoes_app/src/models/dummy_data.dart';
 import 'package:nike_shoes_app/src/ui/home_screen/components/discount_item.dart';
 import 'package:nike_shoes_app/src/ui/home_screen/components/product_item.dart';
 
@@ -34,10 +35,7 @@ class _HomeScreenState extends State<HomeScreen> {
       4,
       (index) => const DiscountItem(),
     );
-    final products = List.generate(
-      2,
-      (index) => const ProductItem(),
-    );
+
     return Scaffold(
       appBar: AppBar(
         actions: [
@@ -124,12 +122,20 @@ class _HomeScreenState extends State<HomeScreen> {
             SizedBox(
               height: 1000.0,
               child: GridView.builder(
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: products.length,
+                scrollDirection: Axis.vertical,
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  childAspectRatio: 1.0,
                 ),
                 controller: controller,
+                itemCount: shoes
+                    .length, // Ensure the itemCount matches the length of the list
                 itemBuilder: (_, index) {
-                  return products[index % products.length];
+                  return ProductItem(
+                    title: shoes[index].title,
+                    price: shoes[index].price,
+                    imageUrl: shoes[index].imageUrl,
+                  );
                 },
               ),
             ),

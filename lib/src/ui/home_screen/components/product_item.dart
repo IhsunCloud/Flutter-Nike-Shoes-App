@@ -1,16 +1,21 @@
 import 'package:flutter/material.dart';
-
 import 'package:iconly/iconly.dart';
 
 class ProductItem extends StatelessWidget {
+  final String title, price, imageUrl;
+
   const ProductItem({
     super.key,
+    required this.imageUrl,
+    required this.title,
+    required this.price,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
       height: 1800.0,
+      width: 500.0,
       margin: const EdgeInsets.all(14.0),
       decoration: const BoxDecoration(
         color: Colors.white,
@@ -22,25 +27,25 @@ class ProductItem extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Image.asset(
-            'assets/images/YellowShoe.png',
+            imageUrl,
             height: 130,
             fit: BoxFit.fitHeight,
           ),
-          const Padding(
-            padding: EdgeInsets.only(left: 14.0, right: 14.0),
+          Padding(
+            padding: const EdgeInsets.only(left: 14.0, right: 14.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Icon(IconlyLight.arrow_right_2),
+                const Icon(IconlyLight.arrow_right_2),
                 Padding(
-                  padding:
-                      EdgeInsets.only(bottom: 10.0, left: 14.0, right: 14.0),
+                  padding: const EdgeInsets.only(
+                      bottom: 10.0, left: 14.0, right: 14.0),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
-                      Text('Air Max 97'),
-                      Text('\$20.99'),
+                      Text(title),
+                      Text(price),
                     ],
                   ),
                 ),
