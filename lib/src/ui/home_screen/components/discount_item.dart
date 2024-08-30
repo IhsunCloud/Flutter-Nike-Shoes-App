@@ -13,7 +13,6 @@ class DiscountItem extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 31.0, vertical: 20.0),
           child: Container(
-            height: 210.0,
             decoration: const BoxDecoration(
               color: Color(0xFFEFEFEF),
               borderRadius: BorderRadius.all(
@@ -30,7 +29,7 @@ class DiscountItem extends StatelessWidget {
             textAlign: TextAlign.right,
             style: TextStyle(
               fontFamily: 'Lalezar',
-              fontSize: 30.0,
+              fontSize: 28.0,
               letterSpacing: .5,
             ),
           ),
@@ -42,7 +41,7 @@ class DiscountItem extends StatelessWidget {
             'برای اولین خرید',
             style: TextStyle(
               fontFamily: 'Estedad-Medium',
-              fontSize: 16.0,
+              fontSize: 14.0,
               fontWeight: FontWeight.w500,
               letterSpacing: .5,
             ),

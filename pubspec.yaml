@@ -42,6 +42,7 @@ dependencies:
   google_fonts: ^6.2.1
   flutter_localizations:
     sdk: flutter
+  smooth_page_indicator: ^1.2.0+3
 
 dev_dependencies:
   flutter_test:
