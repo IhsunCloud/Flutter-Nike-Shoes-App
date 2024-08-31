@@ -14,7 +14,7 @@ class ProductDetail extends StatelessWidget {
         children: [
           Container(
             width: double.infinity,
-            height: 812,
+            height: 900,
             clipBehavior: Clip.antiAlias,
             decoration: const BoxDecoration(color: Colors.white),
             child: Stack(
@@ -32,12 +32,26 @@ class ProductDetail extends StatelessWidget {
                         borderRadius: BorderRadius.circular(8),
                       ),
                     ),
-                    child: Icon(IconlyLight.arrow_left_2),
+                    child: InkWell(
+                      onTap: () => Navigator.pop(context),
+                      child: const Icon(IconlyLight.arrow_left_2),
+                    ),
+                  ),
+                ),
+                Positioned(
+                  right: 32,
+                  top: 64,
+                  child: Text(
+                    product.title,
+                    style: GoogleFonts.vazirmatn(
+                      fontSize: 18.0,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
 
                 Positioned(
-                  left: 300.98,
+                  left: 330.98,
                   top: 93.44,
                   child: SizedBox(
                     width: 492.70,
@@ -61,24 +75,27 @@ class ProductDetail extends StatelessWidget {
                   ),
                 ),
                 Positioned(
-                  left: 44.0,
-                  top: 288.15,
-                  child: Container(
-                    width: 284.77,
-                    height: 199.89,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage(product.imageUrl),
-                        fit: BoxFit.cover,
+                  left: 60.0,
+                  top: 280.15,
+                  child: Hero(
+                    tag: product.id,
+                    child: Container(
+                      width: 290.77,
+                      height: 200.89,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage(product.imageUrl),
+                          fit: BoxFit.cover,
+                        ),
+                        boxShadow: const [
+                          BoxShadow(
+                            color: Color(0x4C000000),
+                            blurRadius: 45.08,
+                            offset: Offset(0, 22.54),
+                            spreadRadius: 0,
+                          )
+                        ],
                       ),
-                      boxShadow: const [
-                        BoxShadow(
-                          color: Color(0x4C000000),
-                          blurRadius: 45.08,
-                          offset: Offset(0, 22.54),
-                          spreadRadius: 0,
-                        )
-                      ],
                     ),
                   ),
                 ),
@@ -342,7 +359,6 @@ class ProductDetail extends StatelessWidget {
                     ),
                   ),
                 ),
-
                 Positioned(
                   left: 32.0,
                   top: 521.0,
@@ -381,6 +397,42 @@ class ProductDetail extends StatelessWidget {
                       fontSize: 11.86,
                       fontWeight: FontWeight.w500,
                       height: 0,
+                    ),
+                  ),
+                ),
+                Positioned(
+                    bottom: 90,
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 32.0,
+                        vertical: 40,
+                      ),
+                      child: Text(
+                        'نایک ایرزوم گاید 10 ایکس یکی از با کیفیت‌ ترین و \nراحت‌ ترین کفش‌ های نایک است که برای پیاده‌روی و\nدویدن بسیار مناسب است.اگر با برند نایک\tو تولیداتش\nآشنا باشید، حتما می دانیدکه این مدل همیشه\nاز پرفروش ترین هایش است.',
+                        style: GoogleFonts.vazirmatn(fontSize: 18),
+                        overflow: TextOverflow.fade,
+                        textAlign: TextAlign.justify,
+                        maxLines: 6,
+                      ),
+                    )),
+                Positioned(
+                  bottom: 10.0,
+                  right: 80,
+                  left: 80,
+                  child: ElevatedButton.icon(
+                    icon: Icon(IconlyLight.bag_2),
+                    label: Text(
+                      'اضافه کردن به سبد خرید',
+                      style: GoogleFonts.vazirmatn(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                      minimumSize: Size(80, 60),
+                      backgroundColor: Color(0xFFBE3032),
+                      foregroundColor: Colors.white,
                     ),
                   ),
                 ),
