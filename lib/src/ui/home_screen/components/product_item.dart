@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:iconly/iconly.dart';
 
 class ProductItem extends StatelessWidget {
@@ -14,13 +15,12 @@ class ProductItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 430.0,
-      margin: const EdgeInsets.only(bottom: 14.0, right: 14.0, left: 14.0),
-      decoration: const BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.all(
-          Radius.circular(18.0),
-        ),
+      width: 500.0,
+      height: 300.0,
+      margin: const EdgeInsets.only(bottom: 10.0, right: 6.0, left: 6.0),
+      decoration: BoxDecoration(
+        color: Colors.grey.shade200,
+        borderRadius: const BorderRadius.all(Radius.circular(18.0)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -28,26 +28,28 @@ class ProductItem extends StatelessWidget {
           Image.asset(
             imageUrl,
             height: 140,
-            fit: BoxFit.fitHeight,
+            fit: BoxFit.cover,
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 14.0, right: 14.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            padding: const EdgeInsets.only(left: 12.0, right: 12.0),
+            child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                const Icon(IconlyLight.arrow_right_2),
-                Padding(
-                  padding: const EdgeInsets.only(
-                      bottom: 10.0, left: 14.0, right: 14.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      Text(title),
-                      Text(price),
-                    ],
+                Text(
+                  title,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  style: GoogleFonts.vazirmatn(
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
+                // const SizedBox(height: 8.0),
+                const SizedBox(height: 8.0),
+                Text(
+                  price,
+                  style: GoogleFonts.vazirmatn(),
+                ),
+                const SizedBox(height: 2.0)
               ],
             ),
           ),
