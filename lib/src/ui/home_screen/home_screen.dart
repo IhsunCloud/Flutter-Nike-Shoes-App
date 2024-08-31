@@ -138,6 +138,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                     child: ProductItem(
+                      id: item.id,
                       title: item.title,
                       price: item.price,
                       imageUrl: item.imageUrl,

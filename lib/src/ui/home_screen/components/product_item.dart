@@ -3,13 +3,14 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:iconly/iconly.dart';
 
 class ProductItem extends StatelessWidget {
-  final String title, price, imageUrl;
+  final String title, id, price, imageUrl;
 
   const ProductItem({
     super.key,
     required this.title,
     required this.price,
     required this.imageUrl,
+    required this.id,
   });
 
   @override
@@ -25,10 +26,13 @@ class ProductItem extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Image.asset(
-            imageUrl,
-            height: 140,
-            fit: BoxFit.cover,
+          Hero(
+            tag: id,
+            child: Image.asset(
+              imageUrl,
+              height: 140,
+              fit: BoxFit.cover,
+            ),
           ),
           Padding(
             padding: const EdgeInsets.only(left: 12.0, right: 12.0),

@@ -9,28 +9,28 @@ final shoeProvider = StateNotifierProvider<ShoeNotifier, List<Shoe>>((ref) {
     ..state = [
       // ignore: prefer_const_constructors
       Shoe(
-        id: 1,
+        id: '1',
         title: 'Sneaker',
         imageUrl: 'assets/images/toppng.png',
         price: '25.99',
       ),
       // ignore: prefer_const_constructors
       Shoe(
-        id: 2,
+        id: '2',
         title: 'Running Shoe',
         imageUrl: 'assets/images/RedShoe.png',
         price: '25.99',
       ),
       // ignore: prefer_const_constructors
       Shoe(
-        id: 3,
+        id: '3',
         title: 'Boot',
         imageUrl: 'assets/images/15947562_30161559_1000.png',
         price: '25.99',
       ),
       // ignore: prefer_const_constructors
       Shoe(
-        id: 3,
+        id: '3',
         title: 'Boot',
         imageUrl: 'assets/images/YellowShoe.png',
         price: '25.99',
