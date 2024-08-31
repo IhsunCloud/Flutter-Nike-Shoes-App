@@ -2,7 +2,7 @@
 import 'package:equatable/equatable.dart';
 
 class Shoe extends Equatable {
-  final int id;
+  final String id;
   final String title;
   final String imageUrl;
   final String price;
