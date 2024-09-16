@@ -1,3 +1,4 @@
+import 'package:expand_widget/expand_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:iconly/iconly.dart';
@@ -8,7 +9,6 @@ class ProductDetail extends StatelessWidget {
   const ProductDetail({super.key, required this.product});
   @override
   Widget build(BuildContext context) {
-    // Size deviceSize = MediaQuery.of(context).size;
     return Scaffold(
       body: Column(
         children: [
@@ -40,7 +40,7 @@ class ProductDetail extends StatelessWidget {
                 ),
                 Positioned(
                   right: 32,
-                  top: 64,
+                  top: 68,
                   child: Text(
                     product.title,
                     style: GoogleFonts.vazirmatn(
@@ -76,12 +76,12 @@ class ProductDetail extends StatelessWidget {
                 ),
                 Positioned(
                   left: 60.0,
-                  top: 280.15,
+                  top: 210.15,
                   child: Hero(
                     tag: product.id,
                     child: Container(
-                      width: 290.77,
-                      height: 200.89,
+                      width: 300.77,
+                      height: 300.89,
                       decoration: BoxDecoration(
                         image: DecorationImage(
                           image: AssetImage(product.imageUrl),
@@ -90,9 +90,9 @@ class ProductDetail extends StatelessWidget {
                         boxShadow: const [
                           BoxShadow(
                             color: Color(0x4C000000),
-                            blurRadius: 45.08,
-                            offset: Offset(0, 22.54),
-                            spreadRadius: 0,
+                            blurRadius: 120.08,
+                            offset: Offset(0, 27.54),
+                            spreadRadius: .9,
                           )
                         ],
                       ),
@@ -375,7 +375,7 @@ class ProductDetail extends StatelessWidget {
                           ),
                         ),
                         TextSpan(
-                          text: '۴.۷۹',
+                          text: '۸.۹۰۰',
                           style: GoogleFonts.vazirmatn(
                             color: Colors.black,
                             fontSize: 24.0,
@@ -401,20 +401,19 @@ class ProductDetail extends StatelessWidget {
                   ),
                 ),
                 Positioned(
-                    bottom: 90,
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 32.0,
-                        vertical: 40,
-                      ),
-                      child: Text(
-                        'نایک ایرزوم گاید 10 ایکس یکی از با کیفیت‌ ترین و \nراحت‌ ترین کفش‌ های نایک است که برای پیاده‌روی و\nدویدن بسیار مناسب است.اگر با برند نایک\tو تولیداتش\nآشنا باشید، حتما می دانیدکه این مدل همیشه\nاز پرفروش ترین هایش است.',
-                        style: GoogleFonts.vazirmatn(fontSize: 18),
-                        overflow: TextOverflow.fade,
-                        textAlign: TextAlign.justify,
-                        maxLines: 6,
-                      ),
-                    )),
+                  bottom: 90,
+                  child: Padding(
+                    padding: const EdgeInsets.only(
+                        left: 24.0, right: 24.0, bottom: 30.0),
+                    child: ExpandText(
+                      'نایک  ایرزوم   گاید 10 ایکس یکی از  با کیفیت‌ ترین و \nراحت‌ ترین کفش‌ های نایک است که برای پیاده‌روی و\nدویدن بسیار مناسب است.اگر با برند نایک\tو تولیداتش\nآشنا باشید ، حتما  می دانید که  این مدل  همیشه\nاز پرفروش ترین هایش است.',
+                      textAlign: TextAlign.justify,
+                      style: GoogleFonts.vazirmatn(fontSize: 18),
+                      overflow: TextOverflow.fade,
+                      maxLines: 6,
+                    ),
+                  ),
+                ),
                 Positioned(
                   bottom: 10.0,
                   right: 80,
