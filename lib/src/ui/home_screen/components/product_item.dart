@@ -1,62 +1,59 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:iconly/iconly.dart';
+
+import 'package:nike_shoes_app/src/kernel/constants/colors.dart';
 
 class ProductItem extends StatelessWidget {
-  final String title, id, price, imageUrl;
+  final String id, title, price, imageUrl;
 
   const ProductItem({
     super.key,
     required this.title,
-    required this.price,
     required this.imageUrl,
     required this.id,
+    required this.price,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 500.0,
-      height: 300.0,
-      margin: const EdgeInsets.only(bottom: 10.0, right: 6.0, left: 6.0),
+      margin: const EdgeInsets.all(8.0),
       decoration: BoxDecoration(
-        color: Colors.grey.shade200,
+        color: ColorPalette.lakeLucerne.withOpacity(.2),
         borderRadius: const BorderRadius.all(Radius.circular(18.0)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Hero(
             tag: id,
             child: Image.asset(
               imageUrl,
-              height: 140,
+              height: 130.0,
+              width: 150.0,
               fit: BoxFit.cover,
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.only(left: 12.0, right: 12.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text(
-                  title,
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                  style: GoogleFonts.vazirmatn(
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                // const SizedBox(height: 8.0),
-                const SizedBox(height: 8.0),
-                Text(
-                  price,
-                  style: GoogleFonts.vazirmatn(),
-                ),
-                const SizedBox(height: 2.0)
-              ],
+          Text(
+            title,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+            style: GoogleFonts.vazirmatn(
+              fontWeight: FontWeight.bold,
+              fontSize: 16,
             ),
           ),
+          const SizedBox(height: 5.0),
+          Text(
+            price,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+            style: GoogleFonts.vazirmatn(
+              fontSize: 14,
+            ),
+          ),
+          const SizedBox(height: 8.0),
         ],
       ),
     );
