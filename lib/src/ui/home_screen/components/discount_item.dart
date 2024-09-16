@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nike_shoes_app/src/kernel/constants/colors.dart';
 
 class DiscountItem extends StatelessWidget {
   const DiscountItem({
@@ -10,12 +11,13 @@ class DiscountItem extends StatelessWidget {
     return Stack(
       clipBehavior: Clip.none,
       children: [
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 31.0, vertical: 20.0),
+        Container(
+          padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 30.0),
           child: Container(
-            decoration: const BoxDecoration(
-              color: Color(0xFFEFEFEF),
-              borderRadius: BorderRadius.all(
+            width: 300.0,
+            decoration: BoxDecoration(
+              color: ColorPalette.lakeLucerne.withOpacity(.2),
+              borderRadius: const BorderRadius.all(
                 Radius.circular(15.0),
               ),
             ),
@@ -23,7 +25,7 @@ class DiscountItem extends StatelessWidget {
         ),
         const Positioned(
           top: 50.0,
-          right: 60.0,
+          right: 40.0,
           child: Text(
             '۳۰ % تخفیف',
             textAlign: TextAlign.right,
@@ -36,7 +38,7 @@ class DiscountItem extends StatelessWidget {
         ),
         const Positioned(
           top: 100.0,
-          right: 60.0,
+          right: 40.0,
           child: Text(
             'برای اولین خرید',
             style: TextStyle(
@@ -49,11 +51,11 @@ class DiscountItem extends StatelessWidget {
         ),
         Positioned(
           top: 150.0,
-          right: 60.0,
+          right: 40.0,
           child: ElevatedButton(
             onPressed: () {},
             style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0xFF000000),
+                backgroundColor: const Color(0xffCD2626),
                 foregroundColor: const Color(0xFFFFFFFF)),
             child: const Text(
               'مشاهده جزئیات',
@@ -66,12 +68,12 @@ class DiscountItem extends StatelessWidget {
           ),
         ),
         Positioned(
-          left: -80.0,
-          top: 0.0,
+          left: -50.0,
+          top: 10.0,
           child: Image.asset(
             'assets/images/RedShoe.png',
-            height: 260.0,
-            width: 250.0,
+            height: 240.0,
+            width: 220.0,
           ),
         ),
       ],
