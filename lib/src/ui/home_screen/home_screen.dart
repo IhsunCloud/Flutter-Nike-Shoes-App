@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:iconly/iconly.dart';
 import 'package:ionicons/ionicons.dart';
+import 'package:nike_shoes_app/src/kernel/constants/colors.dart';
 import 'package:nike_shoes_app/src/ui/product_screen/product_screen.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -31,7 +32,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    Size deviceSize = MediaQuery.of(context).size;
     final pages = List.generate(
       4,
       (index) => const DiscountItem(),
@@ -41,7 +41,7 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         actions: [
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 21.0),
+            padding: const EdgeInsets.symmetric(horizontal: 12.0),
             child: Row(
               children: [
                 Image.asset('assets/icons/justdoit.png'),
@@ -52,7 +52,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ],
         leading: const Padding(
-          padding: EdgeInsets.only(right: 21.0),
+          padding: EdgeInsets.only(right: 12.0),
           child: Icon(IconlyLight.bag_2),
         ),
       ),
@@ -60,8 +60,7 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Column(
           children: [
             SizedBox(
-              height: 240,
-              width: deviceSize.width - 1.0,
+              height: 250,
               child: PageView.builder(
                 controller: controller,
                 itemCount: pages.length,
@@ -73,15 +72,17 @@ class _HomeScreenState extends State<HomeScreen> {
             SmoothPageIndicator(
               controller: controller,
               count: pages.length,
-              effect: const ExpandingDotsEffect(
+              effect: ExpandingDotsEffect(
                 dotHeight: 16,
                 dotWidth: 16,
-                activeDotColor: Colors.black,
+                activeDotColor: ColorPalette.littleBlueHeron,
+                dotColor: ColorPalette.lakeLucerne.withOpacity(.5),
               ),
             ),
+            const SizedBox(height: 32.0),
             Container(
-              height: 110.0,
-              padding: const EdgeInsets.symmetric(vertical: 32.0),
+              height: 40.0,
+              margin: const EdgeInsets.only(right: 16.0),
               width: double.infinity,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
@@ -95,12 +96,12 @@ class _HomeScreenState extends State<HomeScreen> {
                     },
                     child: Container(
                       height: 36.0,
-                      width: 120.0,
-                      margin: const EdgeInsets.only(right: 31.0),
+                      width: 130.0,
+                      margin: const EdgeInsets.only(left: 10.0),
                       decoration: BoxDecoration(
                         color: selectedIndex == index
-                            ? Colors.black
-                            : Colors.white,
+                            ? ColorPalette.flushMahogany
+                            : ColorPalette.lakeLucerne.withOpacity(.2),
                         borderRadius: const BorderRadius.all(
                           Radius.circular(18.0),
                         ),
@@ -109,6 +110,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: Text(
                           menuItems[index],
                           style: GoogleFonts.vazirmatn(
+                            fontSize: 14,
                             color: selectedIndex == index
                                 ? Colors.white
                                 : Colors.black,
@@ -120,10 +122,12 @@ class _HomeScreenState extends State<HomeScreen> {
                 },
               ),
             ),
+            const SizedBox(height: 32.0),
             SizedBox(
-              width: 490,
-              height: 500,
+              width: 490.0,
+              height: 680.0,
               child: GridView(
+                padding: const EdgeInsets.only(right: 12.0, left: 12.0),
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
                 ),
@@ -140,8 +144,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: ProductItem(
                       id: item.id,
                       title: item.title,
-                      price: item.price,
                       imageUrl: item.imageUrl,
+                      price: item.price,
                     ),
                   );
                 }).toList(),
