@@ -1,16 +1,4 @@
 # nike_shoes_app
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![Simulator Screenshot - iPhone 15 Pro Max - 2024-09-14 at 08 19 48](https://github.com/user-attachments/assets/0348a07a-c6a6-405f-8d89-8599fcddb826)
+![Simulator Screenshot - iPhone 15 Pro Max - 2024-09-14 at 08 20 01](https://github.com/user-attachments/assets/08cc290c-1232-4618-b4c1-3ac40bf76f0c)
